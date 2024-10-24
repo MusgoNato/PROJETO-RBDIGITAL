@@ -1,11 +1,79 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RB Digital</title>
+    <link rel="stylesheet" type="text/css" href="styles.css"/>
+    <div class="progress-container">
+        <div class="progress-bar" id="progress-bar"></div>
+    </div>
 </head>
+
 <body>
-    
+    <div class="section">
+        <div class="grad">
+            <h1>
+                Saúde na Palma da Mão
+            </h1>
+            <div class="icones-saude">
+                <img src="https://img.icons8.com/?size=100&id=yycguIlRBBV3&format=png&color=000000" id="img-celular" title="icone-celular" alt="celularzinho-do-capeta">
+            </div>
+            <div class="icones-saude">
+                <img src="https://img.icons8.com/?size=100&id=NpWB6GLVTcND&format=png&color=000000" id="img-robo-saude" title="icone-robo-saude" alt="Robozin-maroto">
+            </div>
+        </div>
+        <div class="no-grad">
+            <h1 id="text-grad">
+                Educação
+            </h1>
+        </div>
+    </div>
+    <script>
+        function reveal() {
+            const sections = document.querySelectorAll('.section');
+            const windowHeight = window.innerHeight;
+            sections.forEach(section => {
+                const elementTop = section.getBoundingClientRect().top;
+                const elementBottom = section.getBoundingClientRect().bottom;
+                if (elementTop < windowHeight - 100 && elementBottom > 100) {
+                    section.classList.add('visible');
+                }
+                else {
+                    section.classList.remove('visible');
+                }
+
+                const listItems = section.querySelectorAll('ul li');
+                listItems.forEach(item => {
+                const itemTop = item.getBoundingClientRect().top;
+
+                if (itemTop < windowHeight - 100) {
+                    item.classList.add('visible');
+                } else {
+                    item.classList.remove('visible');
+                }
+            });
+            });
+        }
+        window.addEventListener('scroll', reveal);
+        reveal();
+
+         // Função para atualizar a barra de progresso
+         function updateProgressBar() {
+            const progressBar = document.getElementById('progress-bar');
+            const totalHeight = document.body.scrollHeight - window.innerHeight; // Altura total do documento
+            const progress = (window.scrollY / totalHeight) * 100; // Porcentagem de rolagem
+            progressBar.style.width = progress + '%'; // Define a largura da barra de progresso
+        }
+
+        // Adiciona o evento de rolagem
+        window.addEventListener('scroll', updateProgressBar);
+
+        // Atualiza a barra de progresso inicialmente
+        updateProgressBar();
+        
+    </script>
 </body>
+
 </html>
