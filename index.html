@@ -5,29 +5,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RB Digital</title>
-    <link rel="stylesheet" type="text/css" href="styles.css"/>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <script src="https://kit.fontawesome.com/47d74d7a7c.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/0fc80f90c0.js" crossorigin="anonymous"></script>
     <div class="progress-container">
         <div class="progress-bar" id="progress-bar"></div>
     </div>
 </head>
-
 <body>
     <div class="section">
+        <h1>
+            Saúde na Palma da Mão
+        </h1>
         <div class="grad">
-            <h1>
-                Saúde na Palma da Mão
-            </h1>
-            <div class="icones-saude">
-                <img src="https://img.icons8.com/?size=100&id=yycguIlRBBV3&format=png&color=000000" id="img-celular" title="icone-celular" alt="celularzinho-do-capeta">
+            <div class="icones-saude" align="center">
+                <i class="fa-solid fa-robot" id="icone-robo-saude">
+                </i>
+                <h2 id="texto-dinamico"></h2>
+                <p>
+                    Tenha acesso a múltiplos serviços de saúde diretamente pelo aplicativo de mensagens
+                </p>
+                <div id="Whatsapp-container">
+                    <i class="fa-brands fa-whatsapp fa-bounce" id="icone-whats"></i>
+                    <p id="numero-whats">67 9 9845-5540</p>
+                </div>
+                
+                <!--Continuar por aqui (Criar um container, com duas divs uma ao lado da outra
+                sendo uma pra via de exames e outra pra ouvidoria e por final denuncias, como se fosse uma piramide)-->
+                <div class="icones-saude">
+                    <i class="fa-sharp fa-solid fa-file" id="icone-2viaexame"></i>
+                    <p>Resultados de exames médicos sem sair de casa, de forma rápida e fácil.</p>
+                    
+                    <!--Colocar abaixo o qr code da 2 via de exames e fazer um tipo de borda como na folha de exemplo-->
+                    <div>
+                        <img src="qrcode-saude"><p>Leia o QR CODE e acesse o site.</p>
+                    </div>
+                    
+                </div>
             </div>
-            <div class="icones-saude">
-                <img src="https://img.icons8.com/?size=100&id=NpWB6GLVTcND&format=png&color=000000" id="img-robo-saude" title="icone-robo-saude" alt="Robozin-maroto">
-            </div>
+
         </div>
         <div class="no-grad">
             <h1 id="text-grad">
-                Educação
+                Matrículas on-line!
             </h1>
+            <i class="fa-solid fa-mobile-screen" id="icone-celular-2"></i>
+            <div class="sectionII">
+                <div class="grad">
+                </div>
+            </div>
         </div>
     </div>
     <script>
@@ -46,21 +72,21 @@
 
                 const listItems = section.querySelectorAll('ul li');
                 listItems.forEach(item => {
-                const itemTop = item.getBoundingClientRect().top;
+                    const itemTop = item.getBoundingClientRect().top;
 
-                if (itemTop < windowHeight - 100) {
-                    item.classList.add('visible');
-                } else {
-                    item.classList.remove('visible');
-                }
-            });
+                    if (itemTop < windowHeight - 100) {
+                        item.classList.add('visible');
+                    } else {
+                        item.classList.remove('visible');
+                    }
+                });
             });
         }
         window.addEventListener('scroll', reveal);
         reveal();
 
-         // Função para atualizar a barra de progresso
-         function updateProgressBar() {
+        // Função para atualizar a barra de progresso
+        function updateProgressBar() {
             const progressBar = document.getElementById('progress-bar');
             const totalHeight = document.body.scrollHeight - window.innerHeight; // Altura total do documento
             const progress = (window.scrollY / totalHeight) * 100; // Porcentagem de rolagem
@@ -72,7 +98,27 @@
 
         // Atualiza a barra de progresso inicialmente
         updateProgressBar();
-        
+
+        function typeText(element, text, speed) {
+            let index = 0;
+
+            function type() {
+                if (index < text.length) {
+                    element.textContent += text.charAt(index);
+                    index++;
+                    setTimeout(type, speed);
+                }
+            }
+
+            type();
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const h2 = document.getElementById('texto-dinamico');
+            const text = "Atendimento Via Whatsapp";
+            typeText(h2, text, 100);
+        });
+
     </script>
 </body>
 

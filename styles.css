@@ -5,18 +5,31 @@ body{
     padding-block: var(--scroll-height);
 }
 
+/*Referente a borda*/
 .section {
-    width: 90vw;  
-    font-size: 2rem; 
+    width: 90vw;
+    font-size: 2rem;
     opacity: 0;
-    transform: translateY(50px); 
-    background-color: black;
-    background-size: 200% 200%;
-    transition: opacity 1s ease-out, transform 1s ease-out;
+    transform: translateY(50px);
     margin: 5vh auto;
-    padding: 2rem;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    padding: 4px;
+    background: linear-gradient(90deg, #2596be, #20eca4, #2596be);
+    background-size: 200% 200%;
+    border-radius: 12px; 
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.sectionII {
+    width: 90vw;
+    font-size: 2rem;
+    opacity: 0;
+    transform: translateY(50px);
+    margin: 5vh auto;
+    padding: 4px;
+    background: linear-gradient(90deg, #2596be, #20eca4, #2596be);
+    background-size: 200% 200%;
+    border-radius: 12px; 
+    transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
 .section.visible {
@@ -44,69 +57,125 @@ body{
     transition: width 0.2s;
 }
 
+/*Referente a secao*/
 .grad {
     height: 700px;
-    width: 98%;
-    margin: 20px;
+    width: 100%;
     font-size: 24px;
+    background-color: black; 
     color: white;
-    background: linear-gradient(90deg, #2596be, #20eca4, #2596be);
-    background-size: 200% 200%;
-    cursor: pointer;
     border-radius: 8px;
-    border: none;
-    outline: none;
-    transition: background-position 1s ease;
-  }
+    padding: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0);
+    text-align: center;
+    box-sizing: border-box;
+} 
 
 h1 {
     text-align: left;
     padding-top: 20px;
     padding-left: 20px;
-    color: #000f;
+    color: white;
 }
 
 .no-grad {
   display: flex;
+  float: left;
 }
 
 #text-grad {
   background: -webkit-linear-gradient(left,#2596be, #20eca4);
   -webkit-background-clip: text;
+  background-clip: 1;
   -webkit-text-fill-color: transparent;
+  transition: all .5s ease-in-out;
+  font-size: 48px;
+}
+
+#text-grad:hover {
+    transform: scale(1.02);
+}
+
+#icone-celular-2 {
+    font-size: 150px;
+    background: -webkit-linear-gradient(left,#2596be, #20eca4);
+    -webkit-background-clip: text;
+    background-clip: 1;
+    -webkit-text-fill-color: transparent;
+    transition: all .5s ease-in-out; 
+}
+
+#icone-celular-2:hover {
+    transform: scale(1.1);
 }
 
 .grad:hover {
     background-position: right center;
 }
 
-/*Referente as imagens*/
+/*Referente aos icones*/
 .icones-saude{
-    padding: 10px;
+    display: inline-block;
+    margin-bottom: 100px;
 }
 
-#img-celular{
-    z-index: 1;
-    animation: oscilando 1s alternate infinite;
+#icone-robo-saude{
+    font-size: 50px;
 }
 
-#img-robo-saude{
-    animation: oscilando 1s alternate infinite;
+#icone-whats{
+    font-size: 50px;
+    margin-right: 10px;
+    color: green;
 }
 
-/*Referente a seta
-.arrow{
-    position: relative;
-    width: 30px;
-    height: 30px;
-    margin: 0 -15px;
-}*/
+#icone-2viaexame{
+    font-size: 50px;
+}
+
+#numero-whats{
+    color: white;
+}
+
+#Whatsapp-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5erm;
+}
+
+/*Referente a animacao do texto sendo digitado*/
+#texto-dinamico{
+    font-size: 2rem;
+    width: 100%;
+    max-width: 90vw;
+    overflow: hidden;
+    border-right: 2px solid;
+    animation: escrevendo 4s steps(48) forwards, blink-caret 0.75s infinite;
+}
+
+
+/*Para dispositivos menores, como tablets e celulares, o tamanho da fonte e reduzido*/
+@media (max-width: 768px) { 
+    #texto-dinamico {
+        font-size: 1.2rem; 
+        animation: escrevendo 5s steps(30) forwards, blink-caret 0.75s infinite;
+    }
+}
+
+@keyframes escrevendo{
+    0% {width: 0;}
+    50% {width: 100%;}
+}
+
+@keyframes blink-caret{
+    0%, 100% {border-color: transparent}
+}
 
 @keyframes scroll {
   from {
     scale: 0 1;
   }
-
   to {
     scale: 1 1;
   }
