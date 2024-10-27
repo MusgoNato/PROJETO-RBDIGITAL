@@ -1,4 +1,4 @@
-# Nome do projeto
+# RIO BRILHANTE DIGITAL
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/iuricode/README-template?style=for-the-badge)
 ![GitHub language count](https://img.shields.io/github/languages/count/iuricode/README-template?style=for-the-badge)
@@ -21,9 +21,9 @@ Antes de começar, verifique se você atendeu aos seguintes requisitos:
 
 Siga estas etapas:
 
-- 1° Baixe os arquivos do repositório.
-- 2° Pelo VS Code ou outro editor de código, tenha instalado alguma extensao que possibilite criar um host local.
-- 3° Veja o projeto rodando apertando no Go Live ou Live Preview para extensões do tipo Live Server ou Live preview.
+- Baixe os arquivos do repositório.
+- Pelo VS Code ou outro editor de código, tenha instalado alguma extensão que possibilite criar um host local.
+- Veja o projeto rodando apertando no Go Live ou Live Preview para extensões do tipo Live Server ou Live preview.
 
 ## 🤝 Colaboradores
 
@@ -33,7 +33,7 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
   <tr>
     <td align="center">
       <a href="https://github.com/augutso1" title="Perfil Github">
-        <img src="https://avatars3.githubusercontent.com/u/31936044" width="100px;" alt="Foto do Augusto no GitHub"/><br>
+        <img src="imagens/97047246.jpg" width="100px;" alt="Foto do Augusto"/><br>
         <sub>
           <b>Augusto do Rêgo Franke</b>
         </sub>
@@ -41,7 +41,7 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
     </td>
     <td align="center">
       <a href="https://github.com/MusgoNato" title="Perfil Github">
-        <img src="https://s2.glbimg.com/FUcw2usZfSTL6yCCGj3L3v3SpJ8=/smart/e.glbimg.com/og/ed/f/original/2019/04/25/zuckerberg_podcast.jpg" width="100px;" alt="Foto do Mark Zuckerberg"/><br>
+        <img src="imagens/131496781.jpg" width="100px;" alt="Foto do Hugo"/><br>
         <sub>
           <b>Hugo Josué Lema Das Neves</b>
         </sub>
