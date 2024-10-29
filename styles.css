@@ -1,4 +1,4 @@
-body{
+body {
     height: 200vh;
     font-family: 'Neulis Alt Bold', sans-serif;
     background-color: black;
@@ -15,21 +15,35 @@ body{
     padding: 4px;
     background: linear-gradient(90deg, #2596be, #20eca4, #2596be);
     background-size: 200% 200%;
-    border-radius: 12px; 
+    border-radius: 12px;
     transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
+.div-mae {
+    display: grid;
+    /* Ativa o Grid Layout */
+    grid-template-columns: repeat(2, 1fr);
+    /* Duas colunas de largura igual */
+    gap: 10px;
+    /* Espaço entre as colunas */
+}
+
 .sectionII {
-    width: 90vw;
-    font-size: 2rem;
-    opacity: 0;
-    transform: translateY(50px);
-    margin: 5vh auto;
-    padding: 4px;
-    background: linear-gradient(90deg, #2596be, #20eca4, #2596be);
+    padding: 20px;
+    margin: 10px;
+    background: linear-gradient(90deg, #6c25be, #20eca4, #2596be);
     background-size: 200% 200%;
-    border-radius: 12px; 
-    transition: opacity 1s ease-out, transform 1s ease-out;
+    border-radius: 100px;
+    transition: all .5s ease-in-out;
+}
+
+.sectionIII {
+    padding: 20px;
+    margin: 10px;
+    background: -webkit-linear-gradient(190deg, #209aec, #6e20ec, #c020ec);
+    background-size: 200% 200%;
+    border-radius: 100px;
+    transition: all .5s ease-in-out;
 }
 
 .section.visible {
@@ -38,7 +52,7 @@ body{
 }
 
 :root {
-  --scroll-height: 5px;
+    --scroll-height: 5px;
 }
 
 .progress-container {
@@ -62,51 +76,138 @@ body{
     height: 700px;
     width: 100%;
     font-size: 24px;
-    background-color: black; 
+    background-color: black;
     color: white;
     border-radius: 8px;
     padding: 20px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0);
     text-align: center;
     box-sizing: border-box;
-} 
+}
 
-h1 {
+#titulo-saude {
     text-align: left;
     padding-top: 20px;
     padding-left: 20px;
     color: white;
 }
 
-.no-grad {
-  display: flex;
-  float: left;
+
+
+.no-gradI {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    padding-left: 250px;
+}
+
+.no-gradII {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+
+}
+
+.container {
+    display: grid;
+    /* Define a exibição como grid */
+    grid-template-columns: repeat(2, 1fr);
+    /* Cria duas colunas de largura igual */
+    gap: 15px;
+    /* Espaçamento entre as colunas */
 }
 
 #text-grad {
-  background: -webkit-linear-gradient(left,#2596be, #20eca4);
-  -webkit-background-clip: text;
-  background-clip: 1;
-  -webkit-text-fill-color: transparent;
-  transition: all .5s ease-in-out;
-  font-size: 48px;
+    justify-content: center;
+    align-items: center;
+    background: -webkit-linear-gradient(left, #6c25be, #20eca4);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    transition: all .5s ease-in-out;
+    font-size: 52px;
+}
+
+#text-gradII {
+    justify-content: center;
+    align-items: center;
+    background: -webkit-linear-gradient(120deg, #7520ec, #c020ec);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    transition: all .5s ease-in-out;
+    font-size: 52px;
+}
+
+.subtext-grad {
+    color: black;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    font-size: 22px;
+}
+
+.sectionII:hover {
+    transform: scale(1.025);
+}
+
+.sectionIII:hover {
+    transform: scale(1.025);
 }
 
 #text-grad:hover {
-    transform: scale(1.02);
+    transform: scale(1.012);
 }
 
-#icone-celular-2 {
-    font-size: 150px;
-    background: -webkit-linear-gradient(left,#2596be, #20eca4);
-    -webkit-background-clip: text;
-    background-clip: 1;
-    -webkit-text-fill-color: transparent;
-    transition: all .5s ease-in-out; 
+#text-gradII:hover {
+    transform: scale(1.012);
 }
+
+#infra-cont {
+    background-color: white;
+}
+
+#icon-infra {
+    display: flex;
+    font-size: 175px;
+    background: -webkit-linear-gradient(70deg, #7520ec, #c020ec);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    transition: all .5s ease-in-out;
+    transform: rotate(20deg);
+}
+
+#icon-infra:hover {
+    transform: scale(1.025);
+}
+
+#div-infra {
+    float: right;
+    padding-right: 150px;
+    padding-top: 120px;
+}
+
+/* #icone-celular-2 {
+    display: flex;
+    font-size: 150px;
+    background: -webkit-linear-gradient(left, #6c25be, #20eca4);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    transition: all .5s ease-in-out;
+} */
 
 #icone-celular-2:hover {
-    transform: scale(1.1);
+    transform: scale(1.025);
 }
 
 .grad:hover {
@@ -114,30 +215,30 @@ h1 {
 }
 
 /*Referente aos icones*/
-.icones-saude{
+.icones-saude {
     display: inline-block;
     margin-bottom: 100px;
 }
 
-#icone-robo-saude{
+#icone-robo-saude {
     font-size: 50px;
 }
 
-#icone-whats{
+#icone-whats {
     font-size: 50px;
     margin-right: 10px;
     color: green;
 }
 
-#icone-2viaexame{
+#icone-2viaexame {
     font-size: 50px;
 }
 
-#numero-whats{
+#numero-whats {
     color: white;
 }
 
-#Whatsapp-container{
+#Whatsapp-container {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -145,7 +246,7 @@ h1 {
 }
 
 /*Referente a animacao do texto sendo digitado*/
-#texto-dinamico{
+#texto-dinamico {
     font-size: 2rem;
     width: 100%;
     max-width: 90vw;
@@ -156,41 +257,51 @@ h1 {
 
 
 /*Para dispositivos menores, como tablets e celulares, o tamanho da fonte e reduzido*/
-@media (max-width: 768px) { 
+@media (max-width: 768px) {
     #texto-dinamico {
-        font-size: 1.2rem; 
+        font-size: 1.2rem;
         animation: escrevendo 5s steps(30) forwards, blink-caret 0.75s infinite;
     }
 }
 
-@keyframes escrevendo{
-    0% {width: 0;}
-    50% {width: 100%;}
+@keyframes escrevendo {
+    0% {
+        width: 0;
+    }
+
+    50% {
+        width: 100%;
+    }
 }
 
-@keyframes blink-caret{
-    0%, 100% {border-color: transparent}
+@keyframes blink-caret {
+
+    0%,
+    100% {
+        border-color: transparent
+    }
 }
 
 @keyframes scroll {
-  from {
-    scale: 0 1;
-  }
-  to {
-    scale: 1 1;
-  }
+    from {
+        scale: 0 1;
+    }
+
+    to {
+        scale: 1 1;
+    }
 }
 
-@keyframes oscilando{
-    0%{
+@keyframes oscilando {
+    0% {
         transform: scale(1.2);
     }
-    
-    50%{
+
+    50% {
         transform-origin: scale();
     }
 
-    100%{
+    100% {
         transform: scale();
     }
 }

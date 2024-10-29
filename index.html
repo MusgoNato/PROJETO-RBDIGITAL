@@ -12,9 +12,10 @@
         <div class="progress-bar" id="progress-bar"></div>
     </div>
 </head>
+
 <body>
     <div class="section">
-        <h1>
+        <h1 id="titulo-saude">
             Saúde na Palma da Mão
         </h1>
         <div class="grad">
@@ -29,33 +30,53 @@
                     <i class="fa-brands fa-whatsapp fa-bounce" id="icone-whats"></i>
                     <p id="numero-whats">67 9 9845-5540</p>
                 </div>
-                
+
                 <!--Continuar por aqui (Criar um container, com duas divs uma ao lado da outra
                 sendo uma pra via de exames e outra pra ouvidoria e por final denuncias, como se fosse uma piramide)-->
                 <div class="icones-saude">
-                    <i class="fa-sharp fa-solid fa-file" id="icone-2viaexame"></i>
+                    <i class="fa-sharp fa-solid fa-file" id="icone-2viaexame" id="icon-infra"></i>
                     <p>Resultados de exames médicos sem sair de casa, de forma rápida e fácil.</p>
-                    
+
                     <!--Colocar abaixo o qr code da 2 via de exames e fazer um tipo de borda como na folha de exemplo-->
                     <div>
-                        <img src="qrcode-saude"><p>Leia o QR CODE e acesse o site.</p>
+                        <img src="qrcode-saude">
+                        <p>Leia o QR CODE e acesse o site.</p>
                     </div>
-                    
-                </div>
-            </div>
 
-        </div>
-        <div class="no-grad">
-            <h1 id="text-grad">
-                Matrículas on-line!
-            </h1>
-            <i class="fa-solid fa-mobile-screen" id="icone-celular-2"></i>
-            <div class="sectionII">
-                <div class="grad">
                 </div>
             </div>
         </div>
     </div>
+    <div id="div-infra">
+        <i class="fa-solid fa-helmet-safety" id="icon-infra"></i>
+    </div>
+    <div class="container">
+        <div class="no-gradI">
+            <h1 id="text-grad">Educação</h1>
+            <div class="sectionII">
+                <b class="subtext-grad">Matrículas totalmente online</b>
+            </div>
+            <div class="sectionII">
+                <b class="subtext-grad">Mais rápido e prático</b>
+            </div>
+            <div class="sectionII">
+                <b class="subtext-grad">Sem filas ou espera</b>
+            </div>
+        </div>
+        <div class="no-gradII">
+            <h1 id="text-gradII">Infraestrutura</h1>
+            <div class="sectionIII">
+                <b class="subtext-grad">Análise de projetos</b>
+            </div>
+            <div class="sectionIII">
+                <b class="subtext-grad">100% Digital</b>
+            </div>
+            <div class="sectionIII">
+                <b class="subtext-grad">Apenas 10 dias de espera</b>
+            </div>
+        </div>
+    </div>
+    <!-- <i class="fa-solid fa-mobile-screen" id="icone-celular-2"></i> -->
     <script>
         function reveal() {
             const sections = document.querySelectorAll('.section');
