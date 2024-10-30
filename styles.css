@@ -91,7 +91,7 @@ body {
 
 /*Referente a secao*/
 .grad {
-    height: 700px;
+    height: 100%;
     width: 100%;
     font-size: 24px;
     background-color: black;
@@ -110,44 +110,26 @@ body {
     color: white;
 }
 
-
-
-.no-gradI {
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    width: 500px;
-    padding-left: 250px;
+.no-gradI, .no-gradII {
+    background-color: black; 
+    padding: 20px; 
+    border-radius: 5px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center; 
 }
 
-.no-gradII {
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    width: 500px;
-}
-
-.container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-}
-
-.containerII {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-    padding-top: 100px;
+.container, .containerII {
+    width: 100%; 
+    max-width: 100%; 
 }
 
 .outer-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 40vh;
-    
+    display: flex; 
+    justify-content: center; 
+    flex-wrap: nowrap; 
+    gap: 20px;
+    max-width: 1200px; 
+    margin: 0 auto; 
 }
 
 #text-grad {
@@ -175,66 +157,42 @@ body {
 }
 
 .subtext-grad {
-    color: black;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    font-size: 22px;
+    color: black; 
+    display: block;
+    margin-top: 10px; 
 }
 
 .sectionII:hover {
-    transform: scale(1.025);
+    transform: scale(1.08);
 }
 
 .sectionIII:hover {
-    transform: scale(1.025);
+    transform: scale(1.08);
 }
 
 #text-grad:hover {
-    transform: scale(1.012);
+    transform: scale(1.08);
 }
 
 #text-gradII:hover {
-    transform: scale(1.012);
+    transform: scale(1.08);
+}
+
+.sectionIV:hover{
+    transform: scale(1.08);
+}
+
+.sectionV:hover{
+    transform: scale(1.08);
 }
 
 #infra-cont {
     background-color: white;
 }
 
-/* #icon-infra {
-    display: flex;
-    font-size: 100px;
-    padding-top: 250px;
-    background: -webkit-linear-gradient(70deg, #7520ec, #c020ec);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    -webkit-text-fill-color: transparent;
-    transition: all .5s ease-in-out;
-    transform: rotate(20deg);
-} */
-
 #icon-infra:hover {
     transform: scale(1.025);
 }
-
-#div-infra {
-    float: right;
-    padding-right: 150px;
-    padding-top: 120px;
-}
-
-/* #icone-celular-2 {
-    display: flex;
-    font-size: 150px;
-    background: -webkit-linear-gradient(left, #6c25be, #20eca4);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    -webkit-text-fill-color: transparent;
-    transition: all .5s ease-in-out;
-} */
 
 #icone-celular-2:hover {
     transform: scale(1.025);
@@ -291,6 +249,12 @@ body {
     #texto-dinamico {
         font-size: 1.2rem;
         animation: escrevendo 5s steps(30) forwards, blink-caret 0.75s infinite;
+    }
+}
+
+@media (max-width: 600px) {
+    .outer-container {
+        grid-template-columns: 1fr; /* Muda para uma coluna em telas pequenas */
     }
 }
 
