@@ -46,6 +46,24 @@ body {
     transition: all .5s ease-in-out;
 }
 
+.sectionIV {
+    padding: 20px;
+    margin: 10px;
+    background: -webkit-linear-gradient(190deg, #209aec, #6e20ec, #c020ec);
+    background-size: 200% 200%;
+    border-radius: 100px;
+    transition: all .5s ease-in-out;
+}
+
+.sectionV {
+    padding: 20px;
+    margin: 10px;
+    background: -webkit-linear-gradient(190deg, #209aec, #6e20ec, #c020ec);
+    background-size: 200% 200%;
+    border-radius: 100px;
+    transition: all .5s ease-in-out;
+}
+
 .section.visible {
     opacity: 1;
     transform: translateY(0);
@@ -109,16 +127,27 @@ body {
     display: flex;
     flex-direction: column;
     width: 500px;
-
 }
 
 .container {
     display: grid;
-    /* Define a exibição como grid */
     grid-template-columns: repeat(2, 1fr);
-    /* Cria duas colunas de largura igual */
     gap: 15px;
-    /* Espaçamento entre as colunas */
+}
+
+.containerII {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding-top: 100px;
+}
+
+.outer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40vh;
+    
 }
 
 #text-grad {
@@ -173,9 +202,10 @@ body {
     background-color: white;
 }
 
-#icon-infra {
+/* #icon-infra {
     display: flex;
-    font-size: 175px;
+    font-size: 100px;
+    padding-top: 250px;
     background: -webkit-linear-gradient(70deg, #7520ec, #c020ec);
     -webkit-background-clip: text;
     background-clip: text;
@@ -183,7 +213,7 @@ body {
     -webkit-text-fill-color: transparent;
     transition: all .5s ease-in-out;
     transform: rotate(20deg);
-}
+} */
 
 #icon-infra:hover {
     transform: scale(1.025);
