@@ -37,6 +37,43 @@ body {
     transition: all .5s ease-in-out;
 }
 
+.hidden-list {
+    max-height: 0;              
+    opacity: 0;                 
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+    overflow: hidden; 
+}
+
+
+.hidden-list li {
+    border-left: 2px solid #6e20ec;
+    text-align: left;
+    list-style-type: none;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid black;
+    color: white;
+}
+
+.hidden-list a{
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.hidden-list a:hover{
+    text-decoration: underline;
+}
+
+.hidden-list li:last-child {
+    border-bottom: none;
+}
+
+.sectionII p{
+    font-size: larger;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
 .sectionIII {
     padding: 20px;
     margin: 10px;
@@ -110,12 +147,13 @@ body {
     color: white;
 }
 
-.no-gradI, .no-gradII {
+.no-gradI, .no-gradII{
     background-color: black; 
     padding: 20px; 
     border-radius: 5px; 
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     text-align: center; 
+    transition: transform 0.3 ease, padding-bottom 0.3 ease;
 }
 
 .container, .containerII {
@@ -162,8 +200,13 @@ body {
     margin-top: 10px; 
 }
 
-.sectionII:hover {
+.sectionII:hover{
     transform: scale(1.08);
+}
+
+.no-gradI:hover .hidden-list, .no-gradII .hidden-list{
+    max-height: 150px;      
+    opacity: 1;   
 }
 
 .sectionIII:hover {
@@ -203,34 +246,10 @@ body {
 }
 
 /*Referente aos icones*/
-.icones-saude {
-    display: inline-block;
-    margin-bottom: 100px;
-}
-
-#icone-robo-saude {
-    font-size: 50px;
-}
-
-#icone-whats {
-    font-size: 50px;
-    margin-right: 10px;
+#icone-whats{
     color: green;
-}
-
-#icone-2viaexame {
-    font-size: 50px;
-}
-
-#numero-whats {
-    color: white;
-}
-
-#Whatsapp-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5erm;
+    font-size: 25px;
+    padding-right: 10px;
 }
 
 /*Referente a animacao do texto sendo digitado*/
@@ -242,7 +261,6 @@ body {
     border-right: 2px solid;
     animation: escrevendo 4s steps(48) forwards, blink-caret 0.75s infinite;
 }
-
 
 /*Para dispositivos menores, como tablets e celulares, o tamanho da fonte e reduzido*/
 @media (max-width: 768px) {
