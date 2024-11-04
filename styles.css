@@ -7,19 +7,15 @@ body {
 
 /*Referente a borda*/
 .section {
-    width: 90vw;
+    display: flex;
     font-family: 'Courier New', Courier, monospace;
-    font-size: xx-large;
-    font-weight: bold;
     opacity: 0;
-    transform: translateY(50px);
     margin: 5vh auto;
     padding: 4px;
     background: linear-gradient(90deg, #2596be, #20eca4, #2596be);
     background-size: 200% 200%;
     border-radius: 12px;
-    text-align: center;
-    transition: opacity 1s ease-out, transform 1s ease-out;
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
 
 .div-mae {
@@ -323,12 +319,10 @@ body {
 
 /*Referente a animacao do texto sendo digitado*/
 #texto-dinamico {
+    text-align: center;
     font-size: 2rem;
     width: 100%;
-    max-width: 90vw;
-    overflow: hidden;
-    border-right: 2px solid;
-    animation: escrevendo 4s steps(48) forwards, blink-caret 0.75s infinite;
+    white-space: pre;
 }
 
 .links-itens{

@@ -15,7 +15,7 @@
 
 <body>
     <!-- Linha do topo -->
-    <div class="section">R_B D I G I T A L</div>
+    <div class="section"><h4 id="texto-dinamico"></h4></div>
 
     <div class="outer-container">
         <div class="container">
@@ -153,25 +153,18 @@
         // Atualiza a barra de progresso inicialmente
         updateProgressBar();
 
-        function typeText(element, text, speed) {
-            let index = 0;
+        const texto = "R_B D I G I T A L";
+        let index = 0;
 
-            function type() {
-                if (index < text.length) {
-                    element.textContent += text.charAt(index);
-                    index++;
-                    setTimeout(type, speed);
-                }
+        function escreverTexto() {
+            if (index < texto.length) {
+                document.getElementById("texto-dinamico").innerHTML += texto.charAt(index);
+                index++;
+                setTimeout(escreverTexto, 80); // Ajuste a velocidade aqui
             }
-
-            type();
         }
 
-        document.addEventListener("DOMContentLoaded", function () {
-            const h2 = document.getElementById('texto-dinamico');
-            const text = "Atendimento Via Whatsapp";
-            typeText(h2, text, 100);
-        });
+        escreverTexto();
 
     </script>
 </body>
