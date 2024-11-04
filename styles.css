@@ -1,6 +1,6 @@
 body {
     height: 200vh;
-    font-family: 'Neulis Alt Bold', sans-serif;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     background-color: black;
     padding-block: var(--scroll-height);
 }
@@ -8,7 +8,9 @@ body {
 /*Referente a borda*/
 .section {
     width: 90vw;
-    font-size: 2rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: xx-large;
+    font-weight: bold;
     opacity: 0;
     transform: translateY(50px);
     margin: 5vh auto;
@@ -16,6 +18,7 @@ body {
     background: linear-gradient(90deg, #2596be, #20eca4, #2596be);
     background-size: 200% 200%;
     border-radius: 12px;
+    text-align: center;
     transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
