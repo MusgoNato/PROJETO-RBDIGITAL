@@ -32,16 +32,16 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
 <table>
   <tr>
     <td align="center">
-      <a href="https://avatars.githubusercontent.com/u/97047246?v=4" title="Perfil Github">
-        <img src="imagens/97047246.jpg" width="100px;" alt="Foto do Augusto"/><br>
+      <a href="https://github.com/augutso1" title="Perfil Github">
+        <img src="https://avatars.githubusercontent.com/u/97047246?v=4" width="100px;" alt="Foto do Augusto"/><br>
         <sub>
           <b>Augusto do Rêgo Franke</b>
         </sub>
       </a>
     </td>
     <td align="center">
-      <a href="https://avatars.githubusercontent.com/u/131496781?v=4" title="Perfil Github">
-        <img src="imagens/131496781.jpg" width="100px;" alt="Foto do Hugo"/><br>
+      <a href="https://github.com/MusgoNato" title="Perfil Github">
+        <img src="https://avatars.githubusercontent.com/u/131496781?v=4" width="100px;" alt="Foto do Hugo"/><br>
         <sub>
           <b>Hugo Josué Lema Das Neves</b>
         </sub>
