@@ -77,6 +77,24 @@ body {
     margin: 10px 0;
 }
 
+.sectionIII p{
+    font-size: larger;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.sectionIV p{
+    font-size: larger;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.sectionV p{
+    font-size: larger;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
 .sectionIII {
     padding: 20px;
     margin: 10px;
@@ -89,7 +107,7 @@ body {
 .sectionIV {
     padding: 20px;
     margin: 10px;
-    background: -webkit-linear-gradient(190deg, #209aec, #6e20ec, #c020ec);
+    background: -webkit-linear-gradient(190deg, #a8e6cf, #9be7de, #64b964);
     background-size: 200% 200%;
     border-radius: 100px;
     transition: all .5s ease-in-out;
@@ -173,6 +191,7 @@ body {
     margin: 0 auto; 
 }
 
+/* Educação */
 #text-grad {
     justify-content: center;
     align-items: center;
@@ -185,10 +204,37 @@ body {
     font-size: 52px;
 }
 
+/* Infraestrutura */
 #text-gradII {
     justify-content: center;
     align-items: center;
-    background: -webkit-linear-gradient(120deg, #7520ec, #c020ec);
+    background: -webkit-linear-gradient(120deg, #4a4a4a, white, #0a74da);;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    transition: all .5s ease-in-out;
+    font-size: 52px;
+}
+
+/* Saude */
+#text-gradIII{
+    justify-content: center;
+    align-items: center;
+    background: -webkit-linear-gradient(120deg, #76c7c0, #34a853, #91e3a5);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    transition: all .5s ease-in-out;
+    font-size: 52px;
+}
+
+/* ADministração */
+#text-gradIV{
+    justify-content: center;
+    align-items: center;
+    background: -webkit-linear-gradient(120deg, #27469c, #4fa18e, #0c6570);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -218,7 +264,7 @@ body {
 }
 
 .sectionIV:hover .hidden-list{
-    max-height: 150px;
+    max-height: 200px;
     opacity: 1;
 }
 
@@ -234,6 +280,13 @@ body {
     transform: scale(1.08);
 }
 
+#text-gradIII:hover{
+    transform: scale(1.08);
+}   
+
+#text-gradIV:hover{
+    transform: scale(1.08);
+}
 .sectionIV:hover{
     transform: scale(1.08);
 }
@@ -273,6 +326,11 @@ body {
     overflow: hidden;
     border-right: 2px solid;
     animation: escrevendo 4s steps(48) forwards, blink-caret 0.75s infinite;
+}
+
+.links-itens{
+    color: blue;
+    font-size: larger;
 }
 
 /*Para dispositivos menores, como tablets e celulares, o tamanho da fonte e reduzido*/
