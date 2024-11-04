@@ -15,7 +15,7 @@
 Antes de começar, verifique se você atendeu aos seguintes requisitos:
 
 - Você instalou a versão mais recente de `<HTML e CSS>`
-- Você tem uma máquina `<Windows / Linux / Mac>`. Indique qual sistema operacional é compatível / não compatível.
+- Você tem uma máquina `<Windows / Linux / Mac>`.
 
 ## 🚀 Veja o Projeto <RB-Digital>
 
@@ -32,7 +32,7 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
 <table>
   <tr>
     <td align="center">
-      <a href="https://github.com/augutso1" title="Perfil Github">
+      <a href="https://avatars.githubusercontent.com/u/97047246?v=4" title="Perfil Github">
         <img src="imagens/97047246.jpg" width="100px;" alt="Foto do Augusto"/><br>
         <sub>
           <b>Augusto do Rêgo Franke</b>
@@ -40,7 +40,7 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
       </a>
     </td>
     <td align="center">
-      <a href="https://github.com/MusgoNato" title="Perfil Github">
+      <a href="https://avatars.githubusercontent.com/u/131496781?v=4" title="Perfil Github">
         <img src="imagens/131496781.jpg" width="100px;" alt="Foto do Hugo"/><br>
         <sub>
           <b>Hugo Josué Lema Das Neves</b>
