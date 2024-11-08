@@ -48,7 +48,12 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
       </a>
     </td>
     <td align="center">
-      <a href="https://musgonato.github.io/PROJETO-RBDIGITAL/ title="Veja o Site">Link de acesso</a>.
+      <a href="https://musgonato.github.io/PROJETO-RBDIGITAL/ title="Veja o Site">
+        <img src="favicon.png width="100px;" alt="Icone RIO BRILHANTE"/><br>
+        <sub>
+          <b>Rio brilhante Digital</b>
+        </sub>
+      </a>
     </td>
   </tr>
 </table>
