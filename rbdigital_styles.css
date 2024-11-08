@@ -1,0 +1,703 @@
+body {
+    height: 200vh;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: black;
+    padding-block: var(--scroll-height);
+}
+
+/*Referente a borda*/
+.section {
+    display: flex;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 15px;
+    background: linear-gradient(90deg, #2596be, #20eca4, #2596be);
+    background-size: 200% 200%;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    height: 100px;
+}
+
+.div-mae {
+    display: grid;
+    /* Ativa o Grid Layout */
+    grid-template-columns: repeat(2, 1fr);
+    /* Duas colunas de largura igual */
+    gap: 10px;
+    /* Espaço entre as colunas */
+}
+
+.sectionII, .sectionIII, .sectionIV, .sectionV {
+    position: relative;
+    margin: 10px auto;
+    padding: 20px;
+    border-radius: 25px;
+    overflow: hidden;
+    width: 80%;
+    font-size: larger;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    display: block;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.hidden-list {
+    width: 80%;
+    max-width: 500px;
+    background-color: rgba(0, 0, 0, 0.9);
+    border-radius: 15px;
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    padding: 0;
+    pointer-events: none;
+    visibility: hidden;
+    z-index: 1;
+    position: relative;
+    margin: 0 auto;
+}
+
+.hidden-list.active {
+    height: auto;
+    opacity: 1;
+    padding: 15px 20px;
+    margin: 10px auto;
+    pointer-events: auto;
+    visibility: visible;
+    animation: slideDown 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.hidden-list ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 100%;
+}
+
+.hidden-list li {
+    text-align: center;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid black;
+    color: white;
+}
+
+.hidden-list a{
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.hidden-list a:hover{
+    text-decoration: underline;
+    opacity: 0.8;
+}
+
+.hidden-list li:last-child {
+    border-bottom: none;
+}
+
+.sectionIII {
+    padding: 20px;
+    margin: 10px;
+    background: -webkit-linear-gradient(190deg, #209aec, #6e20ec, #c020ec);
+    background-size: 200% 200%;
+    border-radius: 25px;;
+    transition: all .5s ease-in-out;
+    position: relative;
+}
+
+.sectionIV {
+    padding: 20px;
+    margin: 10px;
+    background: -webkit-linear-gradient(190deg, #a8e6cf, #9be7de, #64b964);
+    background-size: 200% 200%;
+    border-radius: 25px;;
+    transition: all .5s ease-in-out;
+    position: relative;
+}
+
+.sectionV {
+    padding: 20px;
+    margin: 10px;
+    background: -webkit-linear-gradient(190deg, #209aec, #6e20ec, #c020ec);
+    background-size: 200% 200%;
+    border-radius: 25px;;
+    transition: all .5s ease-in-out;
+    position: relative;
+}
+
+.section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+:root {
+    --scroll-height: 5px;
+}
+
+.progress-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    z-index: 1001;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0;
+    background-image: linear-gradient(90deg, #086cfc, #20e5ec, #20eca4);
+    transition: width 0.2s;
+}
+
+/*Referente a secao*/
+.grad {
+    height: 100%;
+    width: 100%;
+    font-size: 24px;
+    background-color: black;
+    color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0);
+    text-align: center;
+    box-sizing: border-box;
+}
+
+#titulo-saude {
+    text-align: left;
+    padding-top: 20px;
+    padding-left: 20px;
+    color: white;
+}
+
+.no-gradI, .no-gradII{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.container, .containerII {
+    width: 100%;
+    max-width: 100%;
+}
+
+.outer-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    width: 100%;
+    margin-top: 120px;
+}
+
+.column {
+    flex: 1;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Educação */
+#text-grad {
+    justify-content: center;
+    align-items: center;
+    background: -webkit-linear-gradient(left, #6c25be, #ffffff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    transition: all .5s ease-in-out;
+    font-size: 52px;
+}
+
+/* Infraestrutura */
+#text-gradII {
+    justify-content: center;
+    align-items: center;
+    background: -webkit-linear-gradient(120deg, #ee6825, #ffffff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    transition: all .5s ease-in-out;
+    font-size: 52px;
+}
+
+/* Saúde */
+#text-gradIII {
+    justify-content: center;
+    align-items: center;
+    background: -webkit-linear-gradient(120deg, #ffffff, #91e3a5);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    transition: all .5s ease-in-out;
+    font-size: 52px;
+}
+
+/* Administração */
+#text-gradIV {
+    justify-content: center;
+    align-items: center;
+    background: -webkit-linear-gradient(120deg, #1296c5, #ffffff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    transition: all .5s ease-in-out;
+    font-size: 52px;
+}
+
+.subtext-grad {
+    color: black;
+    display: block;
+    margin-top: 10px;
+}
+
+#text-grad:hover {
+    transform: scale(1.08);
+}
+
+#text-gradII:hover {
+    transform: scale(1.08);
+}
+
+#text-gradIII:hover{
+    transform: scale(1.08);
+}
+
+#text-gradIV:hover{
+    transform: scale(1.08);
+}
+.sectionIV:hover{
+    transform: scale(1.08);
+}
+
+.sectionV:hover{
+    transform: scale(1.08);
+}
+
+#infra-cont {
+    background-color: white;
+}
+
+#icon-infra:hover {
+    transform: scale(1.025);
+}
+
+#icone-celular-2:hover {
+    transform: scale(1.025);
+}
+
+.grad:hover {
+    background-position: right center;
+}
+
+/*Referente aos icones*/
+#icone-whats{
+    color: green;
+    font-size: 25px;
+    padding-right: 10px;
+}
+
+/*Referente a animacao do texto sendo digitado*/
+#texto-dinamico {
+    text-align: center;
+    font-size: 2rem;
+    width: 100%;
+    white-space: pre;
+    margin-top: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    min-width: 200px; /* Garante largura mínima */
+}
+
+.links-itens{
+    color: blue;
+    font-size: larger;
+}
+
+/*Para dispositivos menores, como tablets e celulares, o tamanho da fonte e reduzido*/
+@media (max-width: 768px) {
+    #texto-dinamico {
+        font-size: 1.2rem;
+        animation: escrevendo 5s steps(30) forwards, blink-caret 0.75s infinite;
+    }
+}
+
+@media (max-width: 600px) {
+    .outer-container {
+        grid-template-columns: 1fr; /* Muda para uma coluna em telas pequenas */
+    }
+}
+
+@keyframes escrevendo {
+    0% {
+        width: 0;
+    }
+
+    50% {
+        width: 100%;
+    }
+}
+
+@keyframes blink-caret {
+
+    0%,
+    100% {
+        border-color: transparent
+    }
+}
+
+@keyframes scroll {
+    from {
+        scale: 0 1;
+    }
+
+    to {
+        scale: 1 1;
+    }
+}
+
+@keyframes oscilando {
+    0% {
+        transform: scale(1.2);
+    }
+
+    50% {
+        transform-origin: scale();
+    }
+
+    100% {
+        transform: scale();
+    }
+}
+
+@media (max-width: 768px) {
+    .div-mae {
+        grid-template-columns: 1fr; /* Uma coluna em telas menores */
+    }
+
+    .outer-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #text-grad,
+    #text-gradII,
+    #text-gradIII,
+    #text-gradIV {
+        font-size: 32px; /* Fonte menor em telas menores */
+    }
+
+    .sectionII,
+    .sectionIII,
+    .sectionIV,
+    .sectionV {
+        border-radius: 50px; /* Reduzir raio em telas menores */
+    }
+}
+
+
+.sectionII:hover {
+    transform: scale(1.08);
+    z-index: 3;
+}
+
+.sectionII .hidden-list {
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1;
+}
+
+@keyframes slideDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+        max-height: 0;
+        padding: 0;
+        margin: 0 auto;
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        max-height: 500px;
+        padding: 15px 5px;
+        margin: 10px auto;
+    }
+}
+
+@keyframes slideUp {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+        max-height: 500px;
+        padding: 15px 5px;
+        margin: 10px auto;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-20px);
+        max-height: 0;
+        padding: 0;
+        margin: 0 auto;
+        visibility: hidden;
+    }
+}
+
+.hidden-list.closing {
+    animation: slideUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Ajustar estilo dos botões para todas as seções */
+.sectionII .section-button,
+.sectionIII .section-button,
+.sectionIV .section-button,
+.sectionV .section-button {
+    width: 100%;
+    padding: 20px;
+    font-size: larger;
+    font-weight: bold;
+    background: inherit;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    display: block;
+    text-align: center;
+    border-radius: inherit;
+    transition: transform 0.3s ease;
+}
+
+/* Adicionar hover effect para todos os botões */
+.sectionII .section-button:hover,
+.sectionIII .section-button:hover,
+.sectionIV .section-button:hover,
+.sectionV .section-button:hover {
+    transform: scale(1.02);
+}
+
+/* Ajustes para mobile */
+@media (max-width: 768px) {
+    .outer-container {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .column {
+        max-width: 100%;
+    }
+
+    /* Ajuste dos títulos para mobile */
+    #text-grad,
+    #text-gradII,
+    #text-gradIII,
+    #text-gradIV {
+        font-size: 36px;
+        text-align: center;
+    }
+
+    /* Ajuste dos botões para mobile */
+    .section-button {
+        font-size: 16px;
+        padding: 15px;
+    }
+
+    /* Ajuste das seções para mobile */
+    .sectionII,
+    .sectionIII,
+    .sectionIV,
+    .sectionV {
+        margin: 5px;
+        padding: 10px;
+        border-radius: 50px;
+    }
+
+    /* Ajuste das listas para mobile */
+    .hidden-list {
+        width: 95%;
+        max-width: none;
+    }
+
+    .hidden-list li {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    /* Ajuste do texto dinâmico */
+    #texto-dinamico {
+        font-size: 1.5rem;
+        padding: 10px;
+    }
+}
+
+/* Ajustes para telas muito pequenas */
+@media (max-width: 480px) {
+    #text-grad,
+    #text-gradII,
+    #text-gradIII,
+    #text-gradIV {
+        font-size: 28px;
+    }
+
+    .section-button {
+        font-size: 14px;
+        padding: 12px;
+    }
+
+    #texto-dinamico {
+        font-size: 1.2rem;
+    }
+}
+
+/* Educação */
+.sectionII {
+    padding: 20px;
+    margin: 10px auto;
+    background: -webkit-linear-gradient(-10deg, #6c25be, #ffffff, #ffffff);
+    background-size: 200% 200%;
+    border-radius: 25px;;
+    transition: all .5s ease-in-out;
+    position: relative;
+    color: black;
+    width: 80%;
+    border: none;
+    cursor: pointer;
+    display: block;
+    text-align: center;
+}
+
+/* Infraestrutura */
+.sectionIII {
+    padding: 20px;
+    margin: 10px auto;
+    background: -webkit-linear-gradient(190deg, #ee6825, #ee6825, #ffffff);
+    background-size: 200% 200%;
+    border-radius: 25px;
+    transition: all .5s ease-in-out;
+    position: relative;
+    color: black;
+    width: 80%;
+    border: none;
+    cursor: pointer;
+    display: block;
+    text-align: center;
+}
+
+/* Saúde */
+.sectionIV {
+    padding: 20px;
+    margin: 10px auto;
+    background: -webkit-linear-gradient(190deg, #ffffff, #91e3a5);
+    background-size: 200% 200%;
+    border-radius: 25px;;
+    transition: all .5s ease-in-out;
+    position: relative;
+    color: black;
+    width: 80%;
+    border: none;
+    cursor: pointer;
+    display: block;
+    text-align: center;
+}
+
+/* Administração */
+.sectionV {
+    padding: 20px;
+    margin: 10px auto;
+    background: -webkit-linear-gradient(190deg, #1296c5, #1296c5, #ffffff);
+    background-size: 200% 200%;
+    border-radius: 25px;;
+    transition: all .5s ease-in-out;
+    position: relative;
+    color: black;
+    width: 80%;
+    border: none;
+    cursor: pointer;
+    display: block;
+    text-align: center;
+}
+
+.sectionIII:hover {
+    transform: scale(1.08);
+    z-index: 3;
+}
+
+/* Educação - roxo */
+.sectionII .hidden-list li {
+    border-left-color: #6c25be;
+}
+
+/* Infraestrutura - laranja */
+.sectionIII .hidden-list li {
+    border-left-color: #ee6825;
+}
+
+/* Saúde - verde */
+.sectionIV .hidden-list li {
+    border-left-color: #91e3a5;
+}
+
+/* Administração - azul */
+.sectionV .hidden-list li {
+    border-left-color: #1296c5;
+}
+
+/* Ajustar z-index base dos botões */
+.sectionII, .sectionIII, .sectionIV, .sectionV {
+    position: relative;
+    z-index: 3;
+    /* ... resto das propriedades existentes ... */
+}
+
+/* Ajustar z-index das listas */
+.hidden-list {
+    position: relative;
+    z-index: 1;
+    /* ... resto das propriedades existentes ... */
+}
+
+/* Ajustar z-index durante hover para todos os botões */
+.sectionII:hover,
+.sectionIII:hover,
+.sectionIV:hover,
+.sectionV:hover {
+    transform: scale(1.08);
+    z-index: 3;
+}
+
+/* Garantir que as listas ativas fiquem sempre abaixo */
+.hidden-list.active {
+    z-index: 1;
+    /* ... resto das propriedades existentes ... */
+}
+
+@keyframes piscar {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.cursor {
+    animation: piscar 1s infinite;
+    font-weight: bold;
+    color: #000;
+    margin-left: -3px;
+    margin-right: -3px;
+}
