@@ -25,6 +25,14 @@ Siga estas etapas:
 - Pelo VS Code ou outro editor de código, tenha instalado alguma extensão que possibilite criar um host local.
 - Veja o projeto rodando apertando no Go Live ou Live Preview para extensões do tipo Live Server ou Live preview ou acesse o site pelo link ao final da página.
 
+<div>
+  <a href="http://riobrilhante.ms.gov.br/rbdigital/" title="Veja o Site">
+      <sub>
+        <b>Rio brilhante Digital</b>
+      </sub>
+  </a>
+</div>
+
 ## 🤝 Colaboradores
 
 Agradecemos às seguintes pessoas que contribuíram para este projeto:
@@ -44,14 +52,6 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
         <img src="https://avatars.githubusercontent.com/u/131496781?v=4" width="100px;" alt="Foto do Hugo"/><br>
         <sub>
           <b>Hugo Josué Lema Das Neves</b>
-        </sub>
-      </a>
-    </td>
-    <td align="center">
-      <a href="http://riobrilhante.ms.gov.br/rbdigital/" title="Veja o Site">
-        <img src="favicon.png" width="100px" alt="Foto icone RB"/><br>
-        <sub>
-          <b>Rio brilhante Digital</b>
         </sub>
       </a>
     </td>
