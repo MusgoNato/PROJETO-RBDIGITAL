@@ -23,7 +23,7 @@ Siga estas etapas:
 
 - Baixe os arquivos do repositório.
 - Pelo VS Code ou outro editor de código, tenha instalado alguma extensão que possibilite criar um host local.
-- Veja o projeto rodando apertando no Go Live ou Live Preview para extensões do tipo Live Server ou Live preview ou acesse o site pelo link ao final da página.
+- Veja o projeto rodando apertando no Go Live ou Live Preview para extensões do tipo Live Server ou Live preview ou acesse o site pelo link.
 
 <div>
   <a href="http://riobrilhante.ms.gov.br/rbdigital/" title="Veja o Site">
