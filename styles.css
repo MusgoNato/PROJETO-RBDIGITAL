@@ -701,3 +701,30 @@ body {
     margin-left: -3px;
     margin-right: -3px;
 }
+
+.circuit-icon {
+    width: 150px; /* Tamanho do ícone */
+    height: auto;
+    position: absolute;
+    top: 40%; /* Centraliza verticalmente */
+    transform: translateY(-40%);
+    opacity: 5.8;
+    overflow: hidden; /* Evita que a imagem saia do contêiner */
+}
+
+.circuit-icon.left {
+    left: -5px; /* Ajusta a posição à esquerda */
+}
+
+
+.circuit-icon.right {
+    right: 20px; /* Ajusta a posição à direita */
+}
+
+.circuit-icon.center {
+    width: 200px; /* Ajuste o tamanho conforme necessário */
+    height: auto;
+    margin: 0 10px; /* Espaçamento ao redor */
+    left: 250px; /* Ajusta a posição à esquerda */
+    top: 80%; /* Centraliza verticalmente */
+}
