@@ -32,12 +32,14 @@ body {
     /* Espaço entre as colunas */
 }
 
-.sectionII, .sectionIII, .sectionIV, .sectionV {
+/* Base para todas as seções */
+.sectionII,
+.sectionIII,
+.sectionIV,
+.sectionV {
     position: relative;
     margin: 10px auto;
-    padding: 20px;
     border-radius: 25px;
-    overflow: hidden;
     width: 80%;
     font-size: larger;
     font-weight: bold;
@@ -46,6 +48,7 @@ body {
     display: block;
     text-align: center;
     transition: transform 0.3s ease;
+    z-index: 3;
 }
 
 .hidden-list {
@@ -89,14 +92,14 @@ body {
     color: white;
 }
 
-.hidden-list a{
+.hidden-list a {
     text-decoration: none;
     font-weight: bold;
     color: white;
     transition: all 0.3s ease;
 }
 
-.hidden-list a:hover{
+.hidden-list a:hover {
     text-decoration: underline;
     opacity: 0.8;
 }
@@ -105,34 +108,39 @@ body {
     border-bottom: none;
 }
 
-.sectionIII {
-    padding: 20px;
-    margin: 10px;
-    background: -webkit-linear-gradient(190deg, #209aec, #6e20ec, #c020ec);
-    background-size: 200% 200%;
-    border-radius: 25px;;
-    transition: all .5s ease-in-out;
-    position: relative;
+/* Efeito hover/touch */
+@media (hover: hover) {
+
+    /* Apenas para dispositivos com hover real */
+    .sectionIII:hover {
+        transform: scale(1.08);
+    }
+
+    .sectionIII:hover::after {
+        width: 100%;
+    }
 }
 
-.sectionIV {
-    padding: 20px;
-    margin: 10px;
-    background: -webkit-linear-gradient(190deg, #a8e6cf, #9be7de, #64b964);
-    background-size: 200% 200%;
-    border-radius: 25px;;
-    transition: all .5s ease-in-out;
-    position: relative;
+/* Ajustes para mobile */
+@media (hover: none) {
+    .sectionIII:active {
+        transform: scale(1.05);
+        /* Efeito mais sutil no mobile */
+        transition: transform 0.2s;
+    }
+
+    .sectionIII:active::after {
+        width: 90%;
+        /* Um pouco menor no mobile para melhor visual */
+    }
 }
 
-.sectionV {
-    padding: 20px;
-    margin: 10px;
-    background: -webkit-linear-gradient(190deg, #209aec, #6e20ec, #c020ec);
-    background-size: 200% 200%;
-    border-radius: 25px;;
-    transition: all .5s ease-in-out;
-    position: relative;
+/* Previne problemas de scroll em iOS */
+@supports (-webkit-touch-callout: none) {
+    .sectionIII {
+        -webkit-user-select: none;
+        user-select: none;
+    }
 }
 
 .section.visible {
@@ -181,14 +189,16 @@ body {
     color: white;
 }
 
-.no-gradI, .no-gradII{
+.no-gradI,
+.no-gradII {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
 }
 
-.container, .containerII {
+.container,
+.containerII {
     width: 100%;
     max-width: 100%;
 }
@@ -282,18 +292,19 @@ body {
     transform: scale(1.08);
 }
 
-#text-gradIII:hover{
+#text-gradIII:hover {
     transform: scale(1.08);
 }
 
-#text-gradIV:hover{
-    transform: scale(1.08);
-}
-.sectionIV:hover{
+#text-gradIV:hover {
     transform: scale(1.08);
 }
 
-.sectionV:hover{
+.sectionIV:hover {
+    transform: scale(1.08);
+}
+
+.sectionV:hover {
     transform: scale(1.08);
 }
 
@@ -314,7 +325,7 @@ body {
 }
 
 /*Referente aos icones*/
-#icone-whats{
+#icone-whats {
     color: green;
     font-size: 25px;
     padding-right: 10px;
@@ -328,10 +339,11 @@ body {
     white-space: pre;
     margin-top: 20px;
     font-family: 'Courier New', Courier, monospace;
-    min-width: 200px; /* Garante largura mínima */
+    min-width: 200px;
+    /* Garante largura mínima */
 }
 
-.links-itens{
+.links-itens {
     color: blue;
     font-size: larger;
 }
@@ -346,7 +358,8 @@ body {
 
 @media (max-width: 600px) {
     .outer-container {
-        grid-template-columns: 1fr; /* Muda para uma coluna em telas pequenas */
+        grid-template-columns: 1fr;
+        /* Muda para uma coluna em telas pequenas */
     }
 }
 
@@ -394,7 +407,8 @@ body {
 
 @media (max-width: 768px) {
     .div-mae {
-        grid-template-columns: 1fr; /* Uma coluna em telas menores */
+        grid-template-columns: 1fr;
+        /* Uma coluna em telas menores */
     }
 
     .outer-container {
@@ -406,14 +420,16 @@ body {
     #text-gradII,
     #text-gradIII,
     #text-gradIV {
-        font-size: 32px; /* Fonte menor em telas menores */
+        font-size: 32px;
+        /* Fonte menor em telas menores */
     }
 
     .sectionII,
     .sectionIII,
     .sectionIV,
     .sectionV {
-        border-radius: 50px; /* Reduzir raio em telas menores */
+        border-radius: 50px;
+        /* Reduzir raio em telas menores */
     }
 }
 
@@ -436,6 +452,7 @@ body {
         padding: 0;
         margin: 0 auto;
     }
+
     100% {
         opacity: 1;
         transform: translateY(0);
@@ -453,6 +470,7 @@ body {
         padding: 15px 5px;
         margin: 10px auto;
     }
+
     100% {
         opacity: 0;
         transform: translateY(-20px);
@@ -550,6 +568,7 @@ body {
 
 /* Ajustes para telas muito pequenas */
 @media (max-width: 480px) {
+
     #text-grad,
     #text-gradII,
     #text-gradIII,
@@ -567,114 +586,97 @@ body {
     }
 }
 
-/* Educação */
+/* Botão Educação */
 .sectionII {
-    padding: 20px;
-    margin: 10px auto;
-    background: -webkit-linear-gradient(-10deg, #6c25be, #ffffff, #ffffff);
-    background-size: 200% 200%;
-    border-radius: 25px;;
-    transition: all .5s ease-in-out;
-    position: relative;
-    color: black;
-    width: 80%;
-    border: none;
-    cursor: pointer;
+    padding: 4px;
+    width: 70%;
+    background-image: linear-gradient(black, black), linear-gradient(90deg, #6c25be, #8c68b5, #ffffff);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    font-size: 0;
+    /* Esconde o texto original */
+}
+
+.sectionII::before {
+    content: "Matrículas Online";
     display: block;
-    text-align: center;
+    padding: 20px;
+    background-color: black;
+    border-radius: 23px;
+    font-size: initial;
+    font-weight: bold;
+    color: white;
 }
 
 /* Infraestrutura */
 .sectionIII {
-    padding: 20px;
-    margin: 10px auto;
-    background: -webkit-linear-gradient(190deg, #ee6825, #ee6825, #ffffff);
-    background-size: 200% 200%;
-    border-radius: 25px;
-    transition: all .5s ease-in-out;
-    position: relative;
-    color: black;
-    width: 80%;
-    border: none;
-    cursor: pointer;
+    padding: 4px;
+    width: 70%;
+    background-image: linear-gradient(black, black), linear-gradient(4200deg, #ee6825, #ffffff);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    font-size: 0;
+    /* Esconde o texto original */
+}
+
+
+
+.sectionIII::before {
+    content: "...";
     display: block;
-    text-align: center;
+    padding: 20px;
+    background-color: black;
+    border-radius: 23px;
+    font-size: initial;
+    font-weight: bold;
+    color: white;
 }
 
 /* Saúde */
 .sectionIV {
-    padding: 20px;
-    margin: 10px auto;
-    background: -webkit-linear-gradient(190deg, #ffffff, #91e3a5);
-    background-size: 200% 200%;
-    border-radius: 25px;;
-    transition: all .5s ease-in-out;
-    position: relative;
-    color: black;
-    width: 80%;
-    border: none;
-    cursor: pointer;
+    padding: 4px;
+    width: 70%;
+    background-image: linear-gradient(black, black), linear-gradient(4200deg,  #ffffff, #91e3a5);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    font-size: 0;
+    /* Esconde o texto original */
+}
+
+.sectionIV::before {
+    content: "...";
     display: block;
-    text-align: center;
+    padding: 20px;
+    background-color: black;
+    border-radius: 23px;
+    font-size: initial;
+    font-weight: bold;
+    color: white;
 }
 
 /* Administração */
 .sectionV {
-    padding: 20px;
-    margin: 10px auto;
-    background: -webkit-linear-gradient(190deg, #1296c5, #1296c5, #ffffff);
-    background-size: 200% 200%;
-    border-radius: 25px;;
-    transition: all .5s ease-in-out;
-    position: relative;
-    color: black;
-    width: 80%;
-    border: none;
-    cursor: pointer;
+    padding: 4px;
+    width: 70%;
+    background-image: linear-gradient(black, black), linear-gradient(4200deg, #1296c5, #ffffff);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    font-size: 0;
+    /* Esconde o texto original */
+}
+
+.sectionV::before {
+    content: "...";
     display: block;
-    text-align: center;
+    padding: 20px;
+    background-color: black;
+    border-radius: 23px;
+    font-size: initial;
+    font-weight: bold;
+    color: white;
 }
 
-.sectionIII:hover {
-    transform: scale(1.08);
-    z-index: 3;
-}
-
-/* Educação - roxo */
-.sectionII .hidden-list li {
-    border-left-color: #6c25be;
-}
-
-/* Infraestrutura - laranja */
-.sectionIII .hidden-list li {
-    border-left-color: #ee6825;
-}
-
-/* Saúde - verde */
-.sectionIV .hidden-list li {
-    border-left-color: #91e3a5;
-}
-
-/* Administração - azul */
-.sectionV .hidden-list li {
-    border-left-color: #1296c5;
-}
-
-/* Ajustar z-index base dos botões */
-.sectionII, .sectionIII, .sectionIV, .sectionV {
-    position: relative;
-    z-index: 3;
-    /* ... resto das propriedades existentes ... */
-}
-
-/* Ajustar z-index das listas */
-.hidden-list {
-    position: relative;
-    z-index: 1;
-    /* ... resto das propriedades existentes ... */
-}
-
-/* Ajustar z-index durante hover para todos os botões */
+/* Hover effects unificados */
 .sectionII:hover,
 .sectionIII:hover,
 .sectionIV:hover,
@@ -683,21 +685,24 @@ body {
     z-index: 3;
 }
 
-/* Garantir que as listas ativas fiquem sempre abaixo */
-.hidden-list.active {
-    z-index: 1;
-    /* ... resto das propriedades existentes ... */
+/* Bordas coloridas das listas */
+.sectionII .hidden-list li {
+    border-left-color: #6c25be;
 }
 
-@keyframes piscar {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
+/* Educação */
+.sectionIII .hidden-list li {
+    border-left-color: #ee6825;
 }
 
-.cursor {
-    animation: piscar 1s infinite;
-    font-weight: bold;
-    color: #000;
-    margin-left: -3px;
-    margin-right: -3px;
+/* Infraestrutura */
+.sectionIV .hidden-list li {
+    border-left-color: #91e3a5;
 }
+
+/* Saúde */
+.sectionV .hidden-list li {
+    border-left-color: #1296c5;
+}
+
+/* Administração */
