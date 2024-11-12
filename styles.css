@@ -591,7 +591,7 @@ body {
 .sectionII {
     padding: 4px;
     width: 70%;
-    background-image: linear-gradient(black, black), linear-gradient(90deg, #6c25be, #8c68b5, #ffffff);
+    background-image: linear-gradient(black, black), linear-gradient(90deg, #6c25be, #970cc6);
     background-origin: border-box;
     background-clip: content-box, border-box;
     color: white;
@@ -608,7 +608,7 @@ body {
 .sectionIII {
     padding: 4px;
     width: 70%;
-    background-image: linear-gradient(black, black), linear-gradient(4200deg, #ee6825, #ffffff);
+    background-image: linear-gradient(black, black), linear-gradient(420deg, #ee6825, #d7c83e);
     background-origin: border-box;
     background-clip: content-box, border-box;
     color: white;
