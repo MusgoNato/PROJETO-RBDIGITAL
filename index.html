@@ -200,6 +200,8 @@
                             otherList.classList.add('closing');
                             otherList.addEventListener('animationend', function () {
                                 otherList.classList.remove('active', 'closing');
+                                // Remove the manual style manipulation
+                                otherList.previousElementSibling.removeAttribute('style');
                             }, { once: true });
                         }
                     });
@@ -209,11 +211,22 @@
                         list.classList.add('closing');
                         list.addEventListener('animationend', function () {
                             list.classList.remove('active', 'closing');
+                            // Remove the manual style manipulation
+                            section.removeAttribute('style');
                         }, { once: true });
                     } else {
                         list.classList.remove('closing');
                         list.classList.add('active');
                     }
+                });
+
+                // Modify touchend handler to remove manual style manipulation
+                section.addEventListener('touchend', () => {
+                    setTimeout(() => {
+                        if (!section.nextElementSibling.classList.contains('active')) {
+                            section.removeAttribute('style');
+                        }
+                    }, 100);
                 });
             });
 

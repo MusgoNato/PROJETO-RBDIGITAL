@@ -3,26 +3,8 @@ body {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     background-color: black;
     padding-block: var(--scroll-height);
+    overflow-x: hidden;
 }
-
-/*Referente a borda*/
-/* .section {
-    display: flex;
-    font-family: 'Courier New', Courier, monospace;
-    margin: 0;
-    padding: 25px;
-    background: black;
-    border-bottom: 3px solid;
-    border-image: linear-gradient(90deg,#0072fb, #34eca3) 1;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    height: 100px;
-} */
 
 .div-mae {
     display: grid;
@@ -75,13 +57,12 @@ body {
     margin: 10px auto;
     pointer-events: auto;
     visibility: visible;
-    animation: slideDown 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    animation: slideDown 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 .hidden-list ul {
     margin: 0;
     padding: 0;
-    list-style: none;
     width: 100%;
 }
 
@@ -206,10 +187,12 @@ body {
 
 .outer-container {
     display: flex;
-    gap: 20px;
+    gap: 50px;
     justify-content: center;
     width: 100%;
-    margin-top: 120px;
+    margin-top: 50px;
+    padding-bottom: 20px;
+    overflow-x: hidden;
 }
 
 .column {
@@ -283,22 +266,6 @@ body {
     color: black;
     display: block;
     margin-top: 10px;
-}
-
-#text-grad:hover {
-    transform: scale(1.08);
-}
-
-#text-gradII:hover {
-    transform: scale(1.08);
-}
-
-#text-gradIII:hover {
-    transform: scale(1.08);
-}
-
-#text-gradIV:hover {
-    transform: scale(1.08);
 }
 
 .sectionIV:hover {
@@ -625,7 +592,7 @@ body {
 .sectionIV {
     padding: 4px;
     width: 70%;
-    background-image: linear-gradient(black, black), linear-gradient(4200deg, #ffffff, #91e3a5);
+    background-image: linear-gradient(black, black), linear-gradient(4200deg, #0ac8ee, #43df6a);
     background-origin: border-box;
     background-clip: content-box, border-box;
     color: white;
@@ -642,7 +609,7 @@ body {
 .sectionV {
     padding: 4px;
     width: 70%;
-    background-image: linear-gradient(black, black), linear-gradient(4200deg, #1296c5, #ffffff);
+    background-image: linear-gradient(black, black), linear-gradient(4200deg,#1296c5, #3712af);
     background-origin: border-box;
     background-clip: content-box, border-box;
     color: white;
@@ -659,7 +626,11 @@ body {
 .sectionII:hover,
 .sectionIII:hover,
 .sectionIV:hover,
-.sectionV:hover {
+.sectionV:hover,
+.sectionII .section-button:hover,
+.sectionIII .section-button:hover,
+.sectionIV .section-button:hover,
+.sectionV .section-button:hover {
     transform: scale(1.08);
     z-index: 3;
 }
@@ -685,3 +656,118 @@ body {
 }
 
 /* Administração */
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: black;
+    z-index: 1000;
+    padding: 10px 0;
+}
+
+.logo {
+    width: 10%;
+    height: 15%;
+    object-fit: contain;
+}
+
+.circuit-icon.left {
+    width: 175px;
+    height: 175px;
+    display: inline-block;
+    background-image: url('technology.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: invert(42%) sepia(98%) saturate(1776%) hue-rotate(201deg) brightness(97%) contrast(98%); /* #136be9 */
+}
+
+.circuit-icon.right {
+    width: 175px;
+    height: 175px;
+    display: inline-block;
+    background-image: url('technology.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: invert(71%) sepia(98%) saturate(1352%) hue-rotate(116deg) brightness(92%) contrast(88%); /* #1cefa0 */
+    rotate: 180deg;
+}
+
+.credits {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    font-size: 12px;
+    opacity: 0.7;
+    z-index: 1000;
+}
+
+.credits a {
+    color: #000000;
+    text-decoration: none;
+}
+
+.credits a:hover {
+    color: #000000;
+    text-decoration: underline;
+}
+
+@keyframes colorChange {
+    0% {
+        filter: hue-rotate(0deg) brightness(150%) saturate(200%);
+    }
+    25% {
+        filter: hue-rotate(90deg) brightness(150%) saturate(200%);
+    }
+    50% {
+        filter: hue-rotate(180deg) brightness(150%) saturate(200%);
+    }
+    75% {
+        filter: hue-rotate(270deg) brightness(150%) saturate(200%);
+    }
+    100% {
+        filter: hue-rotate(360deg) brightness(150%) saturate(200%);
+    }
+}
+
+/* Ajuste para dispositivos móveis */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .logo {
+        width: 30%;
+        height: auto;
+    }
+
+    .circuit-icon.left,
+    .circuit-icon.right {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+/* Ajuste adicional para telas muito pequenas */
+@media (max-width: 480px) {
+    .circuit-icon.left,
+    .circuit-icon.right {
+        width: 80px;
+        height: 80px;
+    }
+
+    .logo {
+        width: 40%;
+    }
+}
