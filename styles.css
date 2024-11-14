@@ -1,26 +1,9 @@
 body {
-    height: 200vh;
+    height: 120vh;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     background-color: black;
     padding-block: var(--scroll-height);
-}
-
-/*Referente a borda*/
-.section {
-    display: flex;
-    font-family: 'Courier New', Courier, monospace;
-    margin: 0;
-    padding: 15px;
-    background: linear-gradient(90deg, #2596be, #20eca4, #2596be);
-    background-size: 200% 200%;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    height: 100px;
+    overflow-x: hidden;
 }
 
 .div-mae {
@@ -32,12 +15,14 @@ body {
     /* Espaço entre as colunas */
 }
 
-.sectionII, .sectionIII, .sectionIV, .sectionV {
+/* Base para todas as seções */
+.sectionII,
+.sectionIII,
+.sectionIV,
+.sectionV {
     position: relative;
     margin: 10px auto;
-    padding: 20px;
     border-radius: 25px;
-    overflow: hidden;
     width: 80%;
     font-size: larger;
     font-weight: bold;
@@ -46,6 +31,7 @@ body {
     display: block;
     text-align: center;
     transition: transform 0.3s ease;
+    z-index: 3;
 }
 
 .hidden-list {
@@ -71,13 +57,12 @@ body {
     margin: 10px auto;
     pointer-events: auto;
     visibility: visible;
-    animation: slideDown 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    animation: slideDown 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 .hidden-list ul {
     margin: 0;
     padding: 0;
-    list-style: none;
     width: 100%;
 }
 
@@ -89,14 +74,14 @@ body {
     color: white;
 }
 
-.hidden-list a{
+.hidden-list a {
     text-decoration: none;
     font-weight: bold;
     color: white;
     transition: all 0.3s ease;
 }
 
-.hidden-list a:hover{
+.hidden-list a:hover {
     text-decoration: underline;
     opacity: 0.8;
 }
@@ -105,34 +90,39 @@ body {
     border-bottom: none;
 }
 
-.sectionIII {
-    padding: 20px;
-    margin: 10px;
-    background: -webkit-linear-gradient(190deg, #209aec, #6e20ec, #c020ec);
-    background-size: 200% 200%;
-    border-radius: 25px;;
-    transition: all .5s ease-in-out;
-    position: relative;
+/* Efeito hover/touch */
+@media (hover: hover) {
+
+    /* Apenas para dispositivos com hover real */
+    .sectionIII:hover {
+        transform: scale(1.08);
+    }
+
+    .sectionIII:hover::after {
+        width: 100%;
+    }
 }
 
-.sectionIV {
-    padding: 20px;
-    margin: 10px;
-    background: -webkit-linear-gradient(190deg, #a8e6cf, #9be7de, #64b964);
-    background-size: 200% 200%;
-    border-radius: 25px;;
-    transition: all .5s ease-in-out;
-    position: relative;
+/* Ajustes para mobile */
+@media (hover: none) {
+    .sectionIII:active {
+        transform: scale(1.05);
+        /* Efeito mais sutil no mobile */
+        transition: transform 0.2s;
+    }
+
+    .sectionIII:active::after {
+        width: 90%;
+        /* Um pouco menor no mobile para melhor visual */
+    }
 }
 
-.sectionV {
-    padding: 20px;
-    margin: 10px;
-    background: -webkit-linear-gradient(190deg, #209aec, #6e20ec, #c020ec);
-    background-size: 200% 200%;
-    border-radius: 25px;;
-    transition: all .5s ease-in-out;
-    position: relative;
+/* Previne problemas de scroll em iOS */
+@supports (-webkit-touch-callout: none) {
+    .sectionIII {
+        -webkit-user-select: none;
+        user-select: none;
+    }
 }
 
 .section.visible {
@@ -181,24 +171,28 @@ body {
     color: white;
 }
 
-.no-gradI, .no-gradII{
+.no-gradI,
+.no-gradII {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
 }
 
-.container, .containerII {
+.container,
+.containerII {
     width: 100%;
     max-width: 100%;
 }
 
 .outer-container {
     display: flex;
-    gap: 20px;
+    gap: 50px;
     justify-content: center;
     width: 100%;
-    margin-top: 120px;
+    margin-top: 50px;
+    padding-bottom: 20px;
+    overflow-x: hidden;
 }
 
 .column {
@@ -220,7 +214,7 @@ body {
 #text-grad {
     justify-content: center;
     align-items: center;
-    background: -webkit-linear-gradient(left, #6c25be, #ffffff);
+    background: -webkit-linear-gradient(left, #6c25be, #970cc6);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -233,7 +227,7 @@ body {
 #text-gradII {
     justify-content: center;
     align-items: center;
-    background: -webkit-linear-gradient(120deg, #ee6825, #ffffff);
+    background: -webkit-linear-gradient(10deg, #ee6825, #d7c83e);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -246,7 +240,7 @@ body {
 #text-gradIII {
     justify-content: center;
     align-items: center;
-    background: -webkit-linear-gradient(120deg, #ffffff, #91e3a5);
+    background: -webkit-linear-gradient(120deg, #0ac8ee, #43df6a);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -259,7 +253,7 @@ body {
 #text-gradIV {
     justify-content: center;
     align-items: center;
-    background: -webkit-linear-gradient(120deg, #1296c5, #ffffff);
+    background: -webkit-linear-gradient(120deg, #1296c5, #3712af);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -274,26 +268,11 @@ body {
     margin-top: 10px;
 }
 
-#text-grad:hover {
+.sectionIV:hover {
     transform: scale(1.08);
 }
 
-#text-gradII:hover {
-    transform: scale(1.08);
-}
-
-#text-gradIII:hover{
-    transform: scale(1.08);
-}
-
-#text-gradIV:hover{
-    transform: scale(1.08);
-}
-.sectionIV:hover{
-    transform: scale(1.08);
-}
-
-.sectionV:hover{
+.sectionV:hover {
     transform: scale(1.08);
 }
 
@@ -314,7 +293,7 @@ body {
 }
 
 /*Referente aos icones*/
-#icone-whats{
+#icone-whats {
     color: green;
     font-size: 25px;
     padding-right: 10px;
@@ -328,10 +307,11 @@ body {
     white-space: pre;
     margin-top: 20px;
     font-family: 'Courier New', Courier, monospace;
-    min-width: 200px; /* Garante largura mínima */
+    min-width: 200px;
+    /* Garante largura mínima */
 }
 
-.links-itens{
+.links-itens {
     color: blue;
     font-size: larger;
 }
@@ -346,7 +326,8 @@ body {
 
 @media (max-width: 600px) {
     .outer-container {
-        grid-template-columns: 1fr; /* Muda para uma coluna em telas pequenas */
+        grid-template-columns: 1fr;
+        /* Muda para uma coluna em telas pequenas */
     }
 }
 
@@ -394,7 +375,8 @@ body {
 
 @media (max-width: 768px) {
     .div-mae {
-        grid-template-columns: 1fr; /* Uma coluna em telas menores */
+        grid-template-columns: 1fr;
+        /* Uma coluna em telas menores */
     }
 
     .outer-container {
@@ -406,14 +388,16 @@ body {
     #text-gradII,
     #text-gradIII,
     #text-gradIV {
-        font-size: 32px; /* Fonte menor em telas menores */
+        font-size: 32px;
+        /* Fonte menor em telas menores */
     }
 
     .sectionII,
     .sectionIII,
     .sectionIV,
     .sectionV {
-        border-radius: 50px; /* Reduzir raio em telas menores */
+        border-radius: 50px;
+        /* Reduzir raio em telas menores */
     }
 }
 
@@ -436,6 +420,7 @@ body {
         padding: 0;
         margin: 0 auto;
     }
+
     100% {
         opacity: 1;
         transform: translateY(0);
@@ -453,6 +438,7 @@ body {
         padding: 15px 5px;
         margin: 10px auto;
     }
+
     100% {
         opacity: 0;
         transform: translateY(-20px);
@@ -550,6 +536,7 @@ body {
 
 /* Ajustes para telas muito pequenas */
 @media (max-width: 480px) {
+
     #text-grad,
     #text-gradII,
     #text-gradIII,
@@ -567,137 +554,220 @@ body {
     }
 }
 
-/* Educação */
+/* Botão Educação */
 .sectionII {
-    padding: 20px;
-    margin: 10px auto;
-    background: -webkit-linear-gradient(-10deg, #6c25be, #ffffff, #ffffff);
-    background-size: 200% 200%;
-    border-radius: 25px;;
-    transition: all .5s ease-in-out;
-    position: relative;
-    color: black;
-    width: 80%;
-    border: none;
-    cursor: pointer;
-    display: block;
-    text-align: center;
+    padding: 4px;
+    width: 70%;
+    background-image: linear-gradient(black, black), linear-gradient(90deg, #6c25be, #970cc6);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    color: white;
+    background-color: black;
+    border-radius: 23px;
+    font-weight: bold;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Infraestrutura */
 .sectionIII {
-    padding: 20px;
-    margin: 10px auto;
-    background: -webkit-linear-gradient(190deg, #ee6825, #ee6825, #ffffff);
-    background-size: 200% 200%;
-    border-radius: 25px;
-    transition: all .5s ease-in-out;
-    position: relative;
-    color: black;
-    width: 80%;
-    border: none;
-    cursor: pointer;
-    display: block;
-    text-align: center;
+    padding: 4px;
+    width: 70%;
+    background-image: linear-gradient(black, black), linear-gradient(420deg, #ee6825, #d7c83e);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    color: white;
+    background-color: black;
+    border-radius: 23px;
+    font-weight: bold;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Saúde */
 .sectionIV {
-    padding: 20px;
-    margin: 10px auto;
-    background: -webkit-linear-gradient(190deg, #ffffff, #91e3a5);
-    background-size: 200% 200%;
-    border-radius: 25px;;
-    transition: all .5s ease-in-out;
-    position: relative;
-    color: black;
-    width: 80%;
-    border: none;
-    cursor: pointer;
-    display: block;
-    text-align: center;
+    padding: 4px;
+    width: 70%;
+    background-image: linear-gradient(black, black), linear-gradient(4200deg, #0ac8ee, #43df6a);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    color: white;
+    background-color: black;
+    border-radius: 23px;
+    background-color: black;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Administração */
 .sectionV {
-    padding: 20px;
-    margin: 10px auto;
-    background: -webkit-linear-gradient(190deg, #1296c5, #1296c5, #ffffff);
-    background-size: 200% 200%;
-    border-radius: 25px;;
-    transition: all .5s ease-in-out;
-    position: relative;
-    color: black;
-    width: 80%;
-    border: none;
-    cursor: pointer;
-    display: block;
-    text-align: center;
+    padding: 4px;
+    width: 70%;
+    background-image: linear-gradient(black, black), linear-gradient(4200deg,#1296c5, #3712af);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    color: white;
+    background-color: black;
+    border-radius: 23px;
+    font-weight: bold;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.sectionIII:hover {
+/* Hover effects unificados */
+.sectionII:hover,
+.sectionIII:hover,
+.sectionIV:hover,
+.sectionV:hover,
+.sectionII .section-button:hover,
+.sectionIII .section-button:hover,
+.sectionIV .section-button:hover,
+.sectionV .section-button:hover {
     transform: scale(1.08);
     z-index: 3;
 }
 
-/* Educação - roxo */
+/* Bordas coloridas das listas */
 .sectionII .hidden-list li {
     border-left-color: #6c25be;
 }
 
-/* Infraestrutura - laranja */
+/* Educação */
 .sectionIII .hidden-list li {
     border-left-color: #ee6825;
 }
 
-/* Saúde - verde */
+/* Infraestrutura */
 .sectionIV .hidden-list li {
     border-left-color: #91e3a5;
 }
 
-/* Administração - azul */
+/* Saúde */
 .sectionV .hidden-list li {
     border-left-color: #1296c5;
 }
 
-/* Ajustar z-index base dos botões */
-.sectionII, .sectionIII, .sectionIV, .sectionV {
-    position: relative;
-    z-index: 3;
-    /* ... resto das propriedades existentes ... */
+/* Administração */
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: black;
+    z-index: 1000;
+    padding: 10px 0;
 }
 
-/* Ajustar z-index das listas */
-.hidden-list {
-    position: relative;
-    z-index: 1;
-    /* ... resto das propriedades existentes ... */
+.logo {
+    width: 10%;
+    height: 15%;
+    object-fit: contain;
 }
 
-/* Ajustar z-index durante hover para todos os botões */
-.sectionII:hover,
-.sectionIII:hover,
-.sectionIV:hover,
-.sectionV:hover {
-    transform: scale(1.08);
-    z-index: 3;
+.circuit-icon.left {
+    width: 175px;
+    height: 175px;
+    display: inline-block;
+    background-image: url('technology.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: invert(42%) sepia(98%) saturate(1776%) hue-rotate(201deg) brightness(97%) contrast(98%); /* #136be9 */
 }
 
-/* Garantir que as listas ativas fiquem sempre abaixo */
-.hidden-list.active {
-    z-index: 1;
-    /* ... resto das propriedades existentes ... */
+.circuit-icon.right {
+    width: 175px;
+    height: 175px;
+    display: inline-block;
+    background-image: url('technology.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: invert(71%) sepia(98%) saturate(1352%) hue-rotate(116deg) brightness(92%) contrast(88%); /* #1cefa0 */
+    rotate: 180deg;
 }
 
-@keyframes piscar {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
+.credits {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    font-size: 12px;
+    opacity: 0.7;
+    z-index: 1000;
 }
 
-.cursor {
-    animation: piscar 1s infinite;
-    font-weight: bold;
-    color: #000;
-    margin-left: -3px;
-    margin-right: -3px;
+.credits a {
+    color: #000000;
+    text-decoration: none;
+}
+
+.credits a:hover {
+    color: #000000;
+    text-decoration: underline;
+}
+
+@keyframes colorChange {
+    0% {
+        filter: hue-rotate(0deg) brightness(150%) saturate(200%);
+    }
+    25% {
+        filter: hue-rotate(90deg) brightness(150%) saturate(200%);
+    }
+    50% {
+        filter: hue-rotate(180deg) brightness(150%) saturate(200%);
+    }
+    75% {
+        filter: hue-rotate(270deg) brightness(150%) saturate(200%);
+    }
+    100% {
+        filter: hue-rotate(360deg) brightness(150%) saturate(200%);
+    }
+}
+
+/* Ajuste para dispositivos móveis */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .logo {
+        width: 30%;
+        height: auto;
+    }
+
+    .circuit-icon.left,
+    .circuit-icon.right {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+/* Ajuste adicional para telas muito pequenas */
+@media (max-width: 480px) {
+    .circuit-icon.left,
+    .circuit-icon.right {
+        width: 80px;
+        height: 80px;
+    }
+
+    .logo {
+        width: 40%;
+    }
 }
